@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io.connect("https://server-teal-two.vercel.app/");
+// const socket = io.connect("https://server-teal-two.vercel.app/");
 // const socket = io.connect("https://server-5-ecru.vercel.app");
+const socket = io('https://server-teal-two.vercel.app', {
+  transports: ['polling']
+});
 
 const SocketRoom = () => {
     const [roomId, setRoomId] = useState("");
